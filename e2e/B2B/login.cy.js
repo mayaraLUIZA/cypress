@@ -2,6 +2,8 @@
 import {LoginPage} from '../../support/LoginPageB2B'
 import logindata from '../../fixtures/dados.json'
 
+
+//teste
 describe('Login Form Tests', () => {
     const loginPage= new LoginPage();
 
