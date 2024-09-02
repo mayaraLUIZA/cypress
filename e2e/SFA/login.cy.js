@@ -2,6 +2,7 @@ import {LoginPage} from '../../support/LoginPageSFA'
 import logindata from '../../fixtures/dados.json'
 
 // <reference types="cypress" />
+//teste
 
 
 describe('Login Page Tests', () => {
