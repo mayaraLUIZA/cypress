@@ -26,5 +26,6 @@ describe('Login Page Tests', () => {
     it('Login de sucesso', () => {
         loginPage.fillLoginForm('mayara.moraes@dataplace.com.br','Qualidade100')
         cy.get('#Login').click()
+        cy.get('.ng-trigger').should('contain', 'sucesso'); 
     });
 });
