@@ -2,7 +2,10 @@ import {LoginPage} from '../../support/LoginPageSFA'
 import logindata from '../../fixtures/dados.json'
 
 // <reference types="cypress" />
+
 // Teste Talita 
+
+// Teste 2
 
 
 describe('Login Page Tests', () => {
