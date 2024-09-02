@@ -6,7 +6,8 @@ import logindata from '../../fixtures/dados.json'
 // Teste Talita 
 
 // Teste 2
-//Mayara tste
+//Mayara tste -- recebido
+
 
 
 describe('Login Page Tests', () => {
