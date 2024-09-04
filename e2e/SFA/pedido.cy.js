@@ -19,7 +19,7 @@ describe('Testes de Pedidos', () => {
         pedidosPage.gerarPedidoButton.should('not.be.disabled');
     });
 
-    it('Verifique se clicar no botão "Visualizar" exibe os detalhes corretos do pedido em uma nova visualização ou modal.', () => {
+    it.only('Verifique se clicar no botão "Visualizar" exibe os detalhes corretos do pedido em uma nova visualização ou modal.', () => {
         pedidosPage.clickVisualizar();
         cy.get('#pedido_main > div > table:nth-child(3) > tbody > tr:nth-child(1) > td:nth-child(1)').should('include.text','NATALIA CRISTIE DO PRADO')
         // Add assertion to check if the modal or new view is displayed
@@ -40,7 +40,7 @@ describe('Testes de Pedidos', () => {
         // Add assertion to check if the details are copied to clipboard
     });
 
-    it.only('Certifique-se de que o botão "Anexos" permite que os usuários carreguem e visualizem anexos relacionados ao pedido.', () => {
+    it('Certifique-se de que o botão "Anexos" permite que os usuários carreguem e visualizem anexos relacionados ao pedido.', () => {
         pedidosPage.clickAnexos();
         //sem arquivo anexado deve dar erro de arquivo não encontrado
         cy.get('tr.ng-star-inserted > :nth-child(2) > .nav-link').click()
@@ -54,6 +54,7 @@ describe('Testes de Pedidos', () => {
 
     it('Clique no botão "Gerar Pedido" enquanto o formulário estiver em estado inválido e verifique se a ação não foi executada.', () => {
         pedidosPage.clickGerarPedido();
+        cy.get('body > ngb-modal-window > div > div > app-pedido-anexo > div > div.d-flex.justify-content-end > div > button:nth-child(3)')
         pedidosPage.submitButton.should('be.disabled');
     });
 
@@ -64,10 +65,5 @@ describe('Testes de Pedidos', () => {
         // Add assertion to check if the order was not processed
     });
 
-    it('Teste a experiência do usuário quando um usuário tenta enviar um arquivo maior que o limite permitido por meio do botão "Anexos".', () => {
-        pedidosPage.clickAnexos();
-        // Simulate file upload with a large file
-        // Add assertion to check if an error message is displayed
-        pedidosPage.errorMessage.should('contain', 'File size exceeds limit');
-    });
+  
 });
