@@ -14,12 +14,18 @@ describe('Testes de Pedidos', () => {
        
     });
 
-    it('Verifique se o botão "Gerar Pedido" está habilitado quando todos os campos obrigatórios estiverem preenchidos corretamente.', () => {
-        pedidosPage.fillFormWithValidData();
-        pedidosPage.gerarPedidoButton.should('not.be.disabled');
+    it.only('Verifique se ao clicar no botão "Gerar Pedido" e o pedido estiver sem itens não deve permitir gerar .', () => {
+        //pedidosPage.fillFormWithValidData();
+       // pedidosPage.gerarPedidoButton.should('not.be.disabled');
+
+       //Tentar gerar pedido sem item
+       cy.get('app-pedidos-detail.ng-star-inserted > :nth-child(2) > :nth-child(1)').click()
+       cy.wait(200)
+       cy.get(':nth-child(5) > :nth-child(1) > .btn').click()
+       cy.get('.ng-trigger').should('be.visible').should('contain', 'não possui itens!');
     });
 
-    it.only('Verifique se clicar no botão "Visualizar" exibe os detalhes corretos do pedido em uma nova visualização ou modal.', () => {
+    it('Verifique se clicar no botão "Visualizar" exibe os detalhes corretos do pedido em uma nova visualização ou modal.', () => {
         pedidosPage.clickVisualizar();
         cy.get('#pedido_main > div > table:nth-child(3) > tbody > tr:nth-child(1) > td:nth-child(1)').should('include.text','NATALIA CRISTIE DO PRADO')
         // Add assertion to check if the modal or new view is displayed
