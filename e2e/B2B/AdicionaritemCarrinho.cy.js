@@ -44,9 +44,9 @@ describe('Product Tests', () => {
         //cy.get('.quantity-field').type('5');
         cy.get('.quantity-field').type('1');//verificado que esta decrementado a qtd em carrinho, aberto OS para ajuste
         productPage.addToCart();
-        cy.get('.ps-lg-10 > .mb-1').invoke('text').then(($value) => {
+        cy.get('h1[class="mb-1"]').invoke('text').then(($value) => {
             cy.log($value)
-            cy.get('body > app-root > app-wrapper > div.fixed-top.bg-white > app-navbar > div > div.py-5 > div > div > div.col-xxl-2.col-lg-2.text-end.col-sm-12.col-md-12.col-12.d-flex.justify-content-end.pt-1 > app-top-right-buttons > div > div.list-inline-item.me-5.me-lg-0 > a > svg').click()
+            cy.get('svg[class="feather feather-shopping-bag"]').click()
             cy.get('.offcanvas-body').wait(200).contains($value)
           })
     })
