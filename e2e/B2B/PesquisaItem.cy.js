@@ -17,12 +17,8 @@ describe('Product Tests', () => {
 
     it('Valide se item de tela é o mesmo da pesquisa', () => {
         cy.get('input[placeholder="Pesquisar por produtos"').type('saveiro{enter}')
-        cy.get('input[placeholder="Pesquisar por produtos"').invoke('val')
-        cy.contains('saveiro').should('be.visible')
-        //const tes = cy.get('input[placeholder="Pesquisar por produtos"').invoke('value')
-          //  cy.log(tes)
-            //cy.get('.g-4').wait(200).should('contain', $value)
-
+        cy.get('.g-4').should('include.text','SAVEIRO').should('be.visible')
+      
       
     })
 
