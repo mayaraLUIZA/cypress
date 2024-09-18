@@ -1,4 +1,3 @@
-
 import {LoginPage} from '../../support/LoginPageB2B'
 import logindata from '../../fixtures/dados.json'
 
@@ -39,7 +38,7 @@ describe('Login Form Tests', () => {
 
     });
 
-    it('Login com sucesso', () => {
+    it.only('Login com sucesso', () => {
         loginPage.enterEmail('teste@teste.com.br');
         loginPage.enterPassword('duZb68h@6R');
         cy.get('.d-grid > .btn').click()

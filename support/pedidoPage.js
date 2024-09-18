@@ -14,7 +14,7 @@ class PedidosPage {
     fillFormWithValidData() {
         // Fill in all required fields with valid data
         this.inputFields.each(($el) => {
-            cy.wrap($el).type('2024/09/03'); // Replace with actual valid data
+            cy.wrap($el).type('2024/09/04'); // Replace with actual valid data
         });
     }
     
