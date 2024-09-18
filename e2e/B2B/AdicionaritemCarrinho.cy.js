@@ -37,7 +37,7 @@ describe('Product Tests', () => {
         //productPage.addToCart();
        // cy.get('.error-message').should('contain.text', 'Quantidade inválida'); // Adjust the selector and message based on actual implementation
     });
-    it.only('Tente adicionar um produto ao carrinho e verifica que consta em carrinho', () => {
+    it.only('Tente adicionar um produto ao carrinho e verifica se consta em carrinho', () => {
         cy.scrollTo('top');
         cy.get('[href="/product-detail/2bd1b2b8-d972-4683-8e8d-dea73fe024b2"] > .mb-3').click({force:true})
         cy.get('.quantity-field').clear()
