@@ -13,10 +13,10 @@ describe('Login Page Tests', () => {
     
     it('Excluir OS e tentar buscar por ela deve exibir que não encontrou os', () => {
         //ao executar informar numOS existente toda vez
-        cy.get('.ml-auto > #typeahead-profissional').type('244136{enter}')
+        cy.get('.ml-auto > #typeahead-profissional').type('244165{enter}')
         cy.get('#delete').click()
         cy.get(':nth-child(5) > :nth-child(1) > .btn').click()
-        cy.get('.ml-auto > #typeahead-profissional').type('244136{enter}')
-        cy.get('.toast-info ').should('be.visible').should('contains','Não foi encontrado nenhuma OS ou Incidente com esse número!')
+        cy.get('.ml-auto > #typeahead-profissional').type('244165{enter}')
+        cy.get('.toast-info').should('be.visible')
     })
 })

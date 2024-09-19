@@ -13,7 +13,7 @@ describe('Form Submission Tests', () => {
     });
 
 
-    it('Verifique se campo salvar OS habilita quando todos os campos obrigatorios estao preenchidos', () => {
+    it.only('Verifique se campo salvar OS habilita quando todos os campos obrigatorios estao preenchidos', () => {
         //OS crido com sucesso
         osPage.typeClientName('Dataplace');
         cy.get('#ngb-typeahead-1-0').click()
@@ -27,7 +27,7 @@ describe('Form Submission Tests', () => {
         osPage.descreverOS('criado automatizado')
         //verifica se botão salvar esta habilitado
         cy.get('button[type="submit"]').should('be.visible');
-
+        cy.wait(300)
         osPage.submitForm();
         //url de os criado com sucesso
         cy.url().should('include', '/edit'); // Adjust based on actual success URL
@@ -54,7 +54,7 @@ describe('Form Submission Tests', () => {
 
 
 
-    it.only('Verifique se botão salvar é exibido quando o usuário tenta enviar sem selecionar uma classificação.', () => {
+    it('Verifique se botão salvar é exibido quando o usuário tenta enviar sem selecionar uma classificação.', () => {
         osPage.typeClientName('Dataplace');
         cy.get('#ngb-typeahead-1-0').click()
         osPage.selectAllocationCenter('Dataplace')
