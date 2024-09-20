@@ -30,7 +30,7 @@ class OSPage {
         return cy.get('#descricao');
     }
     get submitButton() {
-        return cy.get('.bg-success');
+        return cy.get('#content > div > app-ordem-servico-edit > div > form > a');
     }
 
     
@@ -63,7 +63,7 @@ class OSPage {
     }
 
     submitForm() {
-        this.submitButton.click();
+        this.submitButton.click({force: true} );
     }
     descreverOS(descricao){
     this.DescricaoOS.type(descricao)
