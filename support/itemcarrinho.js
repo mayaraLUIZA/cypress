@@ -1,6 +1,6 @@
 class ProductPage {
     get addToCartButton() {
-        return  'div[class="col-xxl-4 col-lg-4 col-md-5 col-5 d-grid"]';
+        return  'app-add-to-cart-button';
     }
 
     get quantityField() {
@@ -21,7 +21,7 @@ class ProductPage {
     }
 
     addToCart() {
-        cy.get(this.addToCartButton).click().click().click()
+        cy.get(this.addToCartButton).click().click().click().should('be.disabled');
         ;
     }
 

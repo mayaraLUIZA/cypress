@@ -100,7 +100,7 @@ class ClientesDatilPage {
     }
 
     get cancelarButton() {
-        return cy.get('.btn-secondary');
+        return cy.get('.btn-secondary')
     }
 
     fillForm(cnpj, razaoSocial, fantasia, cep, logradouro, numero, bairro, cidade, estado) {

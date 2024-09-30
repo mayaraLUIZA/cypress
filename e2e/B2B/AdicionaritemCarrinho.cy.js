@@ -24,20 +24,21 @@ describe('Product Tests', () => {
         productPage.assertSuccessMessage("Item adicionado ao carrinho!"); // Adjust the message based on actual implementation
     });
 
-    it('Tente adicionar um produto ao carrinho com uma quantidade inválida', () => {
+    it.only('Tente adicionar um produto ao carrinho com uma quantidade inválida', () => {
         cy.scrollTo('top');
         cy.get('[href="/product-detail/2bd1b2b8-d972-4683-8e8d-dea73fe024b2"] > .mb-3').click({force:true})
         cy.get('.quantity-field').clear()
         //cy.get('.quantity-field').type('5');
         cy.get('.quantity-field').type('-1');//verificado que esta decrementado a qtd em carrinho, aberto OS para ajuste
         productPage.addToCart();
+  
        // cy.get('.error-message').should('contain.text', 'Quantidade inválida'); // Adjust the selector and message based on actual implementation
        //digita letras
         //productPage.setQuantity('abc');
         //productPage.addToCart();
        // cy.get('.error-message').should('contain.text', 'Quantidade inválida'); // Adjust the selector and message based on actual implementation
     });
-    it.only('Tente adicionar um produto ao carrinho e verifica se consta em carrinho', () => {
+    it('Tente adicionar um produto ao carrinho e verifica se consta em carrinho', () => {
         cy.scrollTo('top');
         cy.get('[href="/product-detail/2bd1b2b8-d972-4683-8e8d-dea73fe024b2"] > .mb-3').click({force:true})
         cy.get('.quantity-field').clear()

@@ -43,4 +43,21 @@ describe('Login Form Tests', () => {
         loginPage.enterPassword('duZb68h@6R');
         cy.get('.d-grid > .btn').click()
     });
+
+    
+    it.only('Verifica ao logar se o email dos dados é o mesmo que usuario logou', () => {
+        loginPage.enterEmail('teste@teste.com.br')
+        cy.get('#log-in-email').invoke('val').then(($value_1) => {
+        loginPage.enterPassword('duZb68h@6R');
+        cy.log($value_1)
+        cy.get('.d-grid > .btn').click()
+        cy.get('.user > .dropdown-toggle').click()
+       // cy.get('#log-in-email')
+        cy.get('.lh-1 > small').invoke('text').then(($value_2) => {
+            expect($value_1).to.eq($value_2)
+        })
+        })
+       
+
+    })
 });

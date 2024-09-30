@@ -11,7 +11,7 @@ describe('Login Page Tests', () => {
         cy.get('#Login').click()
     });
     
-    it('Excluir IN e tentar buscar por ela deve exibir que não encontrou IN', () => {
+    it('Excluir IN e tentar buscar por ele deve exibir que não encontrou IN', () => {
         //ao executar informar numIN existente toda vez
         cy.get('.ml-auto > #typeahead-profissional').type(' 24261004{enter}')
         cy.get('.btn-secondary').click()
