@@ -2,6 +2,7 @@ import {OSPage} from '../../support/OSPage'
 import logindata from '../../fixtures/dados.json'
 import {LoginPage} from '../../support/LoginPageSD'
 
+
 describe('Form Submission Tests', () => {
     const osPage = new OSPage();
     const loginPage = new LoginPage();
@@ -34,8 +35,18 @@ describe('Form Submission Tests', () => {
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.nav > :nth-child(2) > .nav-link').click()
         cy.get(':nth-child(1) > .nav-link').click()
-        cy.get('#situacao').select(10) //8
+        cy.get('#situacao').select(8) //10 //8
         cy.get('.bg-success').click({force:true})
+        cy.get(':nth-child(5) > .nav-link').click()
+
+        cy.get('div[id="done-container"] >app-projeto-planejamento-card').should('have.length', 10)//verifica qtd de card que esta em done
+        //verifica se em to do ,doing, to test e testing não tem cards
+
+        cy.get('div[id="do-do-container"] >app-projeto-planejamento-card').should('have.length', 0); 
+        cy.get('div[id="doing-container"] >app-projeto-planejamento-card').should('have.length', 0); 
+        cy.get('div[id="to-test-container"] >app-projeto-planejamento-card').should('have.length', 0); 
+        cy.get('div[id="testing-container"] >app-projeto-planejamento-card').should('have.length', 0); 
+
 
     })
 })
