@@ -35,7 +35,7 @@ describe('Form Submission Tests', () => {
         cy.get(':nth-child(4) > .nav-link').click()
         cy.get('.nav > :nth-child(2) > .nav-link').click()
         cy.get(':nth-child(1) > .nav-link').click()
-        cy.get('#situacao').select(8) //10 //8
+        cy.get('#situacao').select(10) //10 //8
         cy.get('.bg-success').click({force:true})
         cy.get(':nth-child(5) > .nav-link').click()
 

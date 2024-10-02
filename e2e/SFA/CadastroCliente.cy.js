@@ -70,7 +70,8 @@ describe('Clientes Detail Form Tests', () => {
         cy.get('.btn-secondary').click()
 
         // Adicione uma assertiva para verificar se o usuário foi redirecionado
-        cy.url().should('include', 'https://sfa-homolog.dataplace.app/pedidos?pageIndex=1');
+        cy.get(':nth-child(5) > :nth-child(1) > .btn').click()
+        cy.url().should('include', 'https://sfa-homolog.dataplace.app/clientes/new');
         cy.log()
 
     });
