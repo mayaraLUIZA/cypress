@@ -3,6 +3,12 @@ import logindata from '../../fixtures/dados.json'
 
 // <reference types="cypress" />
 
+// Teste Talita 
+
+// Teste 2
+//Mayara tste -- recebido
+
+
 
 describe('Login Page Tests', () => {
     const loginPage = new LoginPage();
